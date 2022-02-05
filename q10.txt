@@ -1,0 +1,47 @@
+#include <iostream>
+#include <sstream>
+#include <bits/stdc++.h>
+using namespace std;
+
+void extractIntegerWords(string str)
+{
+	stringstream ss;	
+
+	ss << str;
+
+	string temp;
+	int found;
+	int i=0,arr[200]={};
+	while (!ss.eof()) {
+
+		ss >> temp;
+
+		if (stringstream(temp) >> found)
+		{
+		    	
+			arr[i]=found;
+				i++;
+
+		}
+		
+		
+	
+		temp = "";
+	}
+	int k=arr[0],arr2[200]={};
+	int l=0;
+	
+	    sort(arr, arr + i);
+
+	
+
+
+cout<<arr[i-2];
+}
+
+int main()
+{
+	string str = "poeurtoieurptoieuroi 23 difiigpoi 34";
+	extractIntegerWords(str);
+	return 0;
+}

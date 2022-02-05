@@ -1,0 +1,61 @@
+<form id="myForm" method="post" target="_parent">
+
+    <p>Student Name: 
+      <input type="text" name="Student Name" value="" maxlength="200" size="60">
+    </p>
+
+    <p>Age:
+        <input type="number" name="Age" value="" maxlength="2" size="60">
+    </p>
+
+    <p>College:
+        <input type="text" name="College" value="" maxlength="200" size="60">
+    </p>
+
+    <p>Events:
+        <input type="text" name="Events" value="" maxlength="200" size="60">
+    </p>
+
+    <p> Gender
+      <select name="Role">
+        <option name = "Male" selected>Male</option>
+        <option name = "Female" >Female</option>
+        <option name = "Others">Others</option>
+      </select>
+    </p><br />
+    <p> 
+      <input id="submit" type="button" value="Submit" name="submit">
+      <input type="button" name="cancel" value="Cancel" onClick="closebox()">
+    </p>
+</form>
+        
+<table id="details"></table>   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+j script
+
+
+$(document).ready(function(){
+    $('#submit').on('click',function(){
+        var st = '';
+        $('#myForm input[type=text],input[type=number],select').each(function(){
+            st = st+ '<td>'+$(this).val()+'</td>';
+            $(this).val('');
+        });
+        $('#details').append('<tr>'+st+'</tr>');
+    });
+});
